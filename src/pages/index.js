@@ -31,9 +31,10 @@ export default function Home() {
       console.log(stat);
       setValueLocked(stat ? stat["value_locked"] : 0);
       setTotalReward(stat ? stat["total_reward"] : "0");
-   // } catch (error) {
-   //   toast.error("Please refresh your page");
-   // }
+    } catch (error) {
+      //toast.error("Please refresh your page");
+      console.log("error");
+    }
   }
   const disconectWallet = () => {
     toast.promise(
