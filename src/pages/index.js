@@ -52,7 +52,7 @@ export default function Home() {
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark">
             <a class="navbar-brand heading-black" href="index.html">
-                Aptos Zombies Staking
+                Zombie Labs
             </a>
             <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
                     data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
@@ -63,11 +63,6 @@ export default function Home() {
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="https://linktr.ee/aptoszombies">Learn More</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary btn btn-primary" style={{ color:"#080808" }} href="#">
-                            TESTNET Mint (soon)
-                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll d-flex flex-row align-items-center text-primar btn btn-primary"  style={{ color:"#080808" }} href="#">
