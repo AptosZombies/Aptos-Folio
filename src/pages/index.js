@@ -21,6 +21,20 @@ export default function Home() {
     init();
   }, [connected]);
 
+  const init = async () => {
+    try {
+      // if (connected) {
+      //   let balance = await getBalance(account.address);
+      //   setBalance(balance);
+      // }
+      let stat = await getStat();
+      console.log(stat);
+      setValueLocked(stat ? stat["value_locked"] : 0);
+      setTotalReward(stat ? stat["total_reward"] : "0");
+   // } catch (error) {
+   //   toast.error("Please refresh your page");
+   // }
+  }
   const disconectWallet = () => {
     toast.promise(
       disconnect(),
