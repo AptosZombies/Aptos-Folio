@@ -32,22 +32,6 @@ export default function WalletSelector({ show, setShow }) {
         }
     }
 
-    const handleMoreOptions = () => {
-        let walletSelect = document.getElementsByClassName("wallet-not-installed");
-
-        if (isOptionsMore) {
-            for (const element of walletSelect) {
-                element.classList.add("d-none");
-            }
-            setIsOptionMore(false);
-        } else {
-            for (const element of walletSelect) {
-                element.classList.remove("d-none");
-            }
-            setIsOptionMore(true);
-        }
-    }
-
     const sortInstalledWallet = () => {
         wallets.sort((a, b) => {
             if (a.readyState < b.readyState) {
@@ -90,28 +74,6 @@ export default function WalletSelector({ show, setShow }) {
                                     </div>)
                                 })
                             }
-                            <div className="d-flex justify-content-between p-4 align-items-center wallet-select btn-more-options mt-3" onClick={handleMoreOptions}>
-                                <div className="d-flex">
-                                    <h5 className="mt-2 mx-3 fw-bold">More Options</h5>
-                                </div>
-                                <div>
-                                    {
-                                        isOptionsMore ? (
-                                            <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "30px", height: "30px", }} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" >
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                                            </svg>
-                                        ) : (
-                                            <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "30px", height: "30px", }} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>
-                                        )
-                                    }
-
-                                </div>
-                            </div>
-                            <div className="mt-3 text-center text-secondary">
-                                <span>By connecting your wallet and using Staking Platform, you agree to our Terms of Service and Privacy Policy.</span>
-                            </div>
                         </div>
                     </div>
                 </Modal.Body>
