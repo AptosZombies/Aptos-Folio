@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 
 const NETWORK = "mainnet"
 
@@ -15,7 +15,7 @@ export const getNode = (network) => {
     }
 }
 
-export const getReward = () => {
+export const getFloorPrice = () => {
     return {
         "Aptos Monkeys": 1.5,
         "Spooks": 1,
