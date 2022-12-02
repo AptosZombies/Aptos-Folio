@@ -63,7 +63,7 @@ export default function WalletSelector({ show, setShow }) {
     return (
         <div>
             <Modal centered show={show} onHide={handleClose}>
-                <Modal.Body style={{ color: "#3E4551", borderRadius: "10px" }}>
+                <Modal.Body style={{ background: "#3E4551", borderRadius: "10px" }}>
                     <div>
                         <div className="container text-center">
                             <h4 className="mt-4 fw-bold">Connect Wallet</h4>
