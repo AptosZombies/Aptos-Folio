@@ -65,7 +65,7 @@ export default function Home() {
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" onClick={() => { onClickHandler }}>Homepage</a>
+                        <a class="nav-link" href=onClickHandler>Homepage</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://linktr.ee/aptoszombies">Learn More</a>
