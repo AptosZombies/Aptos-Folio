@@ -1,4 +1,4 @@
-import { getNftByOwner } from '@/utils/utils';
+import { getNftByOwner, GetStaked } from '@/utils/utils';
 import { useEffect, useState } from 'react';
 import { useWallet } from '@manahippo/aptos-wallet-adapter';
 import Card from './card';
@@ -50,8 +50,8 @@ export default function AptosNFTs() {
                         </div>
                         <div className="row">
                             {
-                                listNftss.map((nfts) => {
-                                    return <Card key={nfts.creator + "::" + nfts.collection + "::" + nfts.token_name} nfts={nfts} loadNft={init} />
+                                listNftss.map((nft) => {
+                                    return <Card key={nft.creator + "::" + nft.collection + "::" + nft.token_name} nft={nft} loadNft={init} />
                                 })
                             }
                         </div>
