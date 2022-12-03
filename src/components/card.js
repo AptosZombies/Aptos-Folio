@@ -1,6 +1,14 @@
-import { getCurrentFloorPrice } from '@/utils/utils';
+import { useEffect } from 'react';
 
-export default function Card({ nft }) {
+export default function Card({ nft, loadNft }) {
+    useEffect(() => {
+        init();
+    }, []);
+
+    const init = async () => {
+        loadNft();
+    }
+
     return (
         <div className="col-6 col-sm-4 col-md-3 col-lg-2" style={{ cursor: "pointer" }} title={nft.token_name}>
             <div className="card my-3">
