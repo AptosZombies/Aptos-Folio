@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 export default function AptosNFTs() {
 
     const [listNfts, setListNfts] = useState([]);
+    const [listNftss, setListNftss] = useState([]);
+    const [isLoadings, setIsLoadings] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
 
     const {
@@ -20,8 +22,11 @@ export default function AptosNFTs() {
     const init = async () => {
         try {
             let nfts = await getNftByOwner(account.address);
+            let nftss = await GetStaked(account.address);
             setIsLoading(false);
             setListNfts(nfts ? nfts : []);
+            setListNftss(nftss ? nftss : []);
+            setIsLoadings(false);
         } catch (error) {
             toast.error("Please refresh your page");
         }
@@ -33,7 +38,7 @@ export default function AptosNFTs() {
                 <div className="col-12">
                     <div className="mx-4">
                         <div className="d-flex justify-content-between">
-                            <h4 className="fw-bold">NFTs in your wallet({listNfts.length})</h4>
+                            <h4 className="fw-bold">NFTs in your wallet({listNfts.length + listNftss.length})</h4>
                             {/* <button className="btn btn-purple text-end" style={{ fontSize: "14px" }} onClick={handleStakeAll} >Stake All</button> */}
                         </div>
                         <div className="row">
@@ -42,6 +47,18 @@ export default function AptosNFTs() {
                                     return <Card key={nft.creator + "::" + nft.collection_name + "::" + nft.token_name} nft={nft} loadNft={init} />
                                 })
                             }
+                        </div>
+                        <div className="row">
+                            {
+                                listNftss.map((nft) => {
+                                    return <Card key={nft.creator + "::" + nft.collection + "::" + nft.token_name} nft={nft} loadNft={init} />
+                                })
+                            }
+                        </div>
+                        <div className={ isLoadings ? "d-flex justify-content-center" : "d-none"}>
+                            <div className="spinner-grow" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
                         </div>
                         <div className={ isLoading ? "d-flex justify-content-center" : "d-none"}>
                             <div className="spinner-grow" role="status">
