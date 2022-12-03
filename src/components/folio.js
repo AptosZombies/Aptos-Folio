@@ -50,8 +50,8 @@ export default function AptosNFTs() {
                         </div>
                         <div className="row">
                             {
-                                listNftss.map((nft) => {
-                                    return <Card key={nft.creator + "::" + nft.collection + "::" + nft.token_name} nft={nft} loadNft={init} />
+                                listNftss.map((nfts) => {
+                                    return <Card key={nfts.creator + "::" + nfts.collection + "::" + nfts.token_name} nfts={nfts} loadNft={init} />
                                 })
                             }
                         </div>
