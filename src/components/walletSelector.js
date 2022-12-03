@@ -55,8 +55,8 @@ export default function WalletSelector({ show, setShow }) {
                         <div className="container mt-4">
                             {
                                 wallets.map((wallet) => {
-                                    return (<div key={wallet.adapter["name"]} onClick={async () => { await handleConnectWallet(wallet.adapter["name"], wallet.readyState, wallet.adapter["url"]) }} className={wallet.readyState == "Installed" ? "d-flex justify-content-between p-4 align-items-center wallet-select" : "d-flex justify-content-between p-4 align-items-center wallet-select wallet-not-installed d-none"}>
-                                        <div className="d-flex">
+                                    return (<div key={wallet.adapter["name"]} onClick={async () => { await handleConnectWallet(wallet.adapter["name"], wallet.readyState, wallet.adapter["url"]) }} style={{ height: "80px", }} className={wallet.readyState == "Installed" ? "d-flex justify-content-between p-4 align-items-center wallet-select btn btn-primary" : "d-flex justify-content-between p-4 align-items-center wallet-select wallet-not-installed d-none btn btn-primary"}>
+                                        <div className="d-flex align-items-center">
                                             <img src={wallet.adapter["name"] == 'Fletch' ? "https://play-lh.googleusercontent.com/gDJDAI3PSjcbxMAdZz3YpP29VwNRwR4u34nC4vvp410LPqPSjNSiZZhQFcYPZegPeQ=w240-h480-rw" : wallet.adapter["icon"]} height="35" width="35" ></img>
                                             <h5 className="mt-2 mx-3 fw-bold">{wallet.adapter ? wallet.adapter["name"] : ""}</h5>
                                         </div>
