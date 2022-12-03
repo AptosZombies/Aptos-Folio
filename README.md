@@ -11,4 +11,9 @@
 - [ ] Complete NFT metadata
 - [ ] Complete NFT images
 
+### Changelog
+> oldest to recent
+
+- Initial commit
+
 *more tba*
