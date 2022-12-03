@@ -5,10 +5,13 @@ import { getStat } from '@/utils/utils';
 import { useWallet } from '@manahippo/aptos-wallet-adapter';
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
+import { redirect  } from "react-router-dom";
 
 export default function Home() {
   const [show, setShow] = useState(false);
   // const [balance, setBalance] = useState(0);
+
+  const onClickHandler = () => redirect("/home");
 
   const {
     disconnect,
@@ -61,6 +64,9 @@ export default function Home() {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" onClick={() => { onClickHandler }}>Homepage</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://linktr.ee/aptoszombies">Learn More</a>
                     </li>
