@@ -65,10 +65,12 @@ export default function Home() {
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href={() => { onClickHandler }} >Homepage</a>
+                        <a class="nav-link" href="https://linktr.ee/aptoszombies">Learn More</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://linktr.ee/aptoszombies">Learn More</a>
+                        <a onClick={() => { onClickHandler }} class="nav-link page-scroll d-flex flex-row align-items-center text-primar btn btn-primary"  style={{ color:"#080808" }} href="#">
+                            Homepage
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll d-flex flex-row align-items-center text-primar btn btn-primary"  style={{ color:"#080808" }} href="#">
