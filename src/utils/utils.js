@@ -46,13 +46,23 @@ export const getBalance = async (address) => {
 
 export const getNftByOwner = async (address) => {
     try {
-
         // let resp = await axios.get(`https://api-v1.topaz.so/api/profile-data?owner=${address}`);
         let result = await axios.post("https://ddstnsenylablhiyrbse.functions.supabase.co/get-tokens", {
             accountAddress: address
         }).then(resp => resp.data);
 
-        return result.data;
+        result = await Promise.all(result.data.map(async (data) => {
+            if (!data.preview_uri) {
+                let resp = await axios.get(data.token_uri).then(res => res.data);
+                data.preview_uri = resp ? resp.image : undefined;
+            }
+
+            return data;
+        }));
+
+        console.log(result);
+
+        return result;
     } catch (error) {
         console.log(error);
     }
