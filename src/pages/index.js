@@ -51,7 +51,7 @@ export default function Home() {
     <div>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark">
-            <a class="navbar-brand heading-black" href="index.html">
+            <a class="navbar-brand heading-black" href="#">
                 Zombie Labs
             </a>
             <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
@@ -66,7 +66,7 @@ export default function Home() {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll d-flex flex-row align-items-center text-primar btn btn-primary"  style={{ color:"#080808" }} href="#">
-                            Aptos NFT Folio
+                            Aptos-Folio
                         </a>
                     </li>
                 </ul>
@@ -80,7 +80,7 @@ export default function Home() {
             connected ? <div>
               <div className="row text-white mb-4" style={{ marginTop: "80px" }}>
                 <div className="text-center">
-                  <h1>Zombie Labs NFT Portfolio</h1>
+                  <h1>Aptos-Folio</h1>
                   <h4 className="fw-bold">Click and connect all your Aptos NFTs</h4>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="col-12" style={{ marginBottom: "85px" }}>
                   <div className="row text-white">
                     <div className="text-center">
-                      <h1>Zombie Labs NFT Portfolio</h1>
+                      <h1>Aptos-Folio</h1>
                       <h4 className="fw-bold">Click and connect all your Aptos NFTs</h4>
                     </div>
                   </div>
