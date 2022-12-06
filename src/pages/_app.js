@@ -3,24 +3,31 @@ import '../styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css';
 
 import {
-  HippoExtensionWalletAdapter,
-  MartianWalletAdapter,
-  AptosWalletAdapter,
-  FewchaWalletAdapter,
   WalletProvider,
   PontemWalletAdapter,
+  HippoWalletAdapter,
+  AptosWalletAdapter,
+  HippoExtensionWalletAdapter,
+  MartianWalletAdapter,
+  FewchaWalletAdapter,
+  SpikaWalletAdapter,
+  RiseWalletAdapter,
+  FletchWalletAdapter
 } from '@manahippo/aptos-wallet-adapter';
 import { useMemo } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const wallets = useMemo(
     () => [
-      // new HippoWalletAdapter(),
-      new HippoExtensionWalletAdapter(),
-      new MartianWalletAdapter(),
-      new AptosWalletAdapter(),
-      new FewchaWalletAdapter(),
-      new PontemWalletAdapter(),
+    new PontemWalletAdapter(),
+    new HippoWalletAdapter(),
+    new MartianWalletAdapter(),
+    new AptosWalletAdapter(),
+    new FewchaWalletAdapter(),
+    new HippoExtensionWalletAdapter(),
+    new SpikaWalletAdapter(),
+    new RiseWalletAdapter(),
+    new FletchWalletAdapter()
     ],
     []
   );
