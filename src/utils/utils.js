@@ -70,12 +70,12 @@ export const getNftByOwner = async (address) => {
 
 export const getTokenData = async (creator, collection, token_name) => {
     try {
-        // let resp = await aptos_token_client.getTokenData(creator, collection, token_name);
-        let resp = await axios.post("https://ddstnsenylablhiyrbse.functions.supabase.co/get-token-data", {
-            "creator": creator,
-            "collection": collection,
-            "name": token_name
-        });
+        let resp = await aptos_token_client.getTokenData(creator, collection, token_name);
+        //let resp = await axios.post("https://ddstnsenylablhiyrbse.functions.supabase.co/get-token-data", {
+        //    "creator": creator,
+        //    "collection": collection,
+        //    "name": token_name
+        //});
         return resp.data.data;
     } catch (error) {
         console.log(error);
